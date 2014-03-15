@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O2 -c -DSTM32F303VC -DSTM32F30X -IT:\Documents\ARM cotex-M3\Progects\F303_first -IT:\Documents\ARM cotex-M3 -IT:\Documents\ARM cotex-M3\Progects\NIXIE_alarm\cmsis_boot -IT:\Documents\ARM cotex-M3\Progects -IT:\Documents\ARM cotex-M3\Progects\NIXIE_alarm\cmsis -IT:\Documents\ARM cotex-M3\Progects\NIXIE_alarm">
+      <target file="startup_stm32f30x.o" lastModified="144c5e22ccf">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f30x.S" lastModified="144c5dde808"/>
+      </target>
+      <target file="system_stm32f30x_temp.o" lastModified="144c5e22cb2">
+         <source file="..\..\..\cmsis_boot\system_stm32f30x_temp.c" lastModified="144c5dde842"/>
+      </target>
+      <target file="delay.o" lastModified="144c5e22bae">
+         <source file="..\..\..\..\F303_first\delay.c" lastModified="144a87457fa"/>
+      </target>
+      <target file="uart_1.o" lastModified="144c5e22c48">
+         <source file="..\..\..\..\F303_first\uart_1.c" lastModified="144ad535d7a"/>
+      </target>
+      <target file="main.o" lastModified="144c5e22bf5">
+         <source file="..\..\..\main.c" lastModified="144c5e188ff"/>
+      </target>
+      <target file="led_blink.o" lastModified="144c5e22b4a">
+         <source file="..\..\..\..\F303_first\led_blink.c" lastModified="1449e803199"/>
+      </target>
+   </processor>
+</history>

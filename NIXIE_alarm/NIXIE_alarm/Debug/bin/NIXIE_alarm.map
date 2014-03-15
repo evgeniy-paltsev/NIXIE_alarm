@@ -1,0 +1,361 @@
+
+Discarded input sections
+
+ .text          0x00000000        0x0 ..\obj\led_blink.o
+ .data          0x00000000        0x0 ..\obj\led_blink.o
+ .bss           0x00000000        0x0 ..\obj\led_blink.o
+ .text.RedLedOn
+                0x00000000        0xc ..\obj\led_blink.o
+ .text.BlueLedOn
+                0x00000000        0xc ..\obj\led_blink.o
+ .text.YellowLedOn
+                0x00000000        0xc ..\obj\led_blink.o
+ .text.WhiteLedOn
+                0x00000000        0xc ..\obj\led_blink.o
+ .text.GreenHighLedOn
+                0x00000000        0xc ..\obj\led_blink.o
+ .text.GreenLowLedOn
+                0x00000000        0xc ..\obj\led_blink.o
+ .text.RedLedOff
+                0x00000000       0x10 ..\obj\led_blink.o
+ .text.BlueLedOff
+                0x00000000       0x10 ..\obj\led_blink.o
+ .text.YellowLedOff
+                0x00000000       0x10 ..\obj\led_blink.o
+ .text.WhiteLedOff
+                0x00000000       0x10 ..\obj\led_blink.o
+ .text.GreenHighLedOff
+                0x00000000       0x10 ..\obj\led_blink.o
+ .text.GreenLowLedOff
+                0x00000000       0x10 ..\obj\led_blink.o
+ .text          0x00000000        0x0 ..\obj\delay.o
+ .data          0x00000000        0x0 ..\obj\delay.o
+ .bss           0x00000000        0x0 ..\obj\delay.o
+ .text.Delay    0x00000000       0x10 ..\obj\delay.o
+ .debug_info    0x00000000       0xd1 ..\obj\delay.o
+ .debug_abbrev  0x00000000       0x94 ..\obj\delay.o
+ .debug_loc     0x00000000       0x1e ..\obj\delay.o
+ .debug_aranges
+                0x00000000       0x20 ..\obj\delay.o
+ .debug_ranges  0x00000000       0x10 ..\obj\delay.o
+ .debug_line    0x00000000      0x120 ..\obj\delay.o
+ .debug_str     0x00000000      0x169 ..\obj\delay.o
+ .comment       0x00000000       0x71 ..\obj\delay.o
+ .ARM.attributes
+                0x00000000       0x33 ..\obj\delay.o
+ .debug_frame   0x00000000       0x20 ..\obj\delay.o
+ .text          0x00000000        0x0 ..\obj\main.o
+ .data          0x00000000        0x0 ..\obj\main.o
+ .bss           0x00000000        0x0 ..\obj\main.o
+ .text          0x00000000        0x0 ..\obj\uart_1.o
+ .data          0x00000000        0x0 ..\obj\uart_1.o
+ .bss           0x00000000        0x0 ..\obj\uart_1.o
+ .text.Uart_1DataSend
+                0x00000000       0x14 ..\obj\uart_1.o
+ .text          0x00000000        0x0 ..\obj\system_stm32f30x_temp.o
+ .data          0x00000000       0x14 ..\obj\system_stm32f30x_temp.o
+ .bss           0x00000000        0x0 ..\obj\system_stm32f30x_temp.o
+ .text.SystemCoreClockUpdate1
+                0x00000000       0x64 ..\obj\system_stm32f30x_temp.o
+ .text          0x00000000       0x14 ..\obj\startup_stm32f30x.o
+ .data          0x00000000        0x0 ..\obj\startup_stm32f30x.o
+ .bss           0x00000000        0x0 ..\obj\startup_stm32f30x.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x08000000         0x00040000         xr
+ram              0x20000000         0x0000a000         xrw
+ram1             0x10000000         0x00002000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x2000a000                _eram = 0x2000a000
+
+.text           0x08000000      0x420
+ *(.isr_vector)
+ .isr_vector    0x08000000      0x188 ..\obj\startup_stm32f30x.o
+                0x08000000                g_pfnVectors
+ *(.text*)
+ .text.ledInit  0x08000188       0xbc ..\obj\led_blink.o
+                0x08000188                ledInit
+ .text.startup.main
+                0x08000244        0xc ..\obj\main.o
+                0x08000244                main
+ .text.Uart_1Init
+                0x08000250       0x74 ..\obj\uart_1.o
+                0x08000250                Uart_1Init
+ .text.SetSysClock1
+                0x080002c4       0xa8 ..\obj\system_stm32f30x_temp.o
+                0x080002c4                SetSysClock
+ .text.SystemInit1
+                0x0800036c       0x64 ..\obj\system_stm32f30x_temp.o
+                0x0800036c                SystemInit
+                0x0800036c                SystemInit1
+ .text.Reset_Handler
+                0x080003d0       0x4c ..\obj\startup_stm32f30x.o
+                0x080003d0                Reset_Handler
+ .text.Default_Handler
+                0x0800041c        0x4 ..\obj\startup_stm32f30x.o
+                0x0800041c                RTC_Alarm_IRQHandler
+                0x0800041c                TIM8_TRG_COM_IRQHandler
+                0x0800041c                TIM8_CC_IRQHandler
+                0x0800041c                DebugMon_Handler
+                0x0800041c                TIM1_CC_IRQHandler
+                0x0800041c                HardFault_Handler
+                0x0800041c                USB_HP_IRQHandler
+                0x0800041c                SysTick_Handler
+                0x0800041c                PVD_IRQHandler
+                0x0800041c                PendSV_Handler
+                0x0800041c                NMI_Handler
+                0x0800041c                EXTI3_IRQHandler
+                0x0800041c                EXTI0_IRQHandler
+                0x0800041c                I2C2_EV_IRQHandler
+                0x0800041c                FPU_IRQHandler
+                0x0800041c                EXTI2_TS_IRQHandler
+                0x0800041c                TIM1_UP_TIM16_IRQHandler
+                0x0800041c                UsageFault_Handler
+                0x0800041c                ADC1_2_IRQHandler
+                0x0800041c                SPI1_IRQHandler
+                0x0800041c                TIM6_DAC_IRQHandler
+                0x0800041c                TIM8_UP_IRQHandler
+                0x0800041c                DMA2_Channel2_IRQHandler
+                0x0800041c                DMA1_Channel4_IRQHandler
+                0x0800041c                USART3_IRQHandler
+                0x0800041c                DMA1_Channel7_IRQHandler
+                0x0800041c                CAN1_RX1_IRQHandler
+                0x0800041c                UART5_IRQHandler
+                0x0800041c                ADC3_IRQHandler
+                0x0800041c                TIM4_IRQHandler
+                0x0800041c                DMA2_Channel1_IRQHandler
+                0x0800041c                I2C1_EV_IRQHandler
+                0x0800041c                DMA1_Channel6_IRQHandler
+                0x0800041c                UART4_IRQHandler
+                0x0800041c                DMA2_Channel4_IRQHandler
+                0x0800041c                TIM3_IRQHandler
+                0x0800041c                RCC_IRQHandler
+                0x0800041c                DMA1_Channel1_IRQHandler
+                0x0800041c                Default_Handler
+                0x0800041c                USBWakeUp_RMP_IRQHandler
+                0x0800041c                EXTI15_10_IRQHandler
+                0x0800041c                TIM7_IRQHandler
+                0x0800041c                EXTI9_5_IRQHandler
+                0x0800041c                TAMPER_STAMP_IRQHandler
+                0x0800041c                RTC_WKUP_IRQHandler
+                0x0800041c                SPI2_IRQHandler
+                0x0800041c                MemManage_Handler
+                0x0800041c                SVC_Handler
+                0x0800041c                DMA2_Channel5_IRQHandler
+                0x0800041c                DMA1_Channel5_IRQHandler
+                0x0800041c                USB_LP_IRQHandler
+                0x0800041c                EXTI4_IRQHandler
+                0x0800041c                USB_LP_CAN1_RX0_IRQHandler
+                0x0800041c                TIM1_TRG_COM_TIM17_IRQHandler
+                0x0800041c                USB_HP_CAN1_TX_IRQHandler
+                0x0800041c                DMA1_Channel3_IRQHandler
+                0x0800041c                ADC4_IRQHandler
+                0x0800041c                WWDG_IRQHandler
+                0x0800041c                TIM2_IRQHandler
+                0x0800041c                COMP7_IRQHandler
+                0x0800041c                COMP1_2_3_IRQHandler
+                0x0800041c                EXTI1_IRQHandler
+                0x0800041c                USART2_IRQHandler
+                0x0800041c                COMP4_5_6_IRQHandler
+                0x0800041c                I2C2_ER_IRQHandler
+                0x0800041c                DMA1_Channel2_IRQHandler
+                0x0800041c                TIM8_BRK_IRQHandler
+                0x0800041c                CAN1_SCE_IRQHandler
+                0x0800041c                FLASH_IRQHandler
+                0x0800041c                BusFault_Handler
+                0x0800041c                USART1_IRQHandler
+                0x0800041c                SPI3_IRQHandler
+                0x0800041c                I2C1_ER_IRQHandler
+                0x0800041c                USBWakeUp_IRQHandler
+                0x0800041c                DMA2_Channel3_IRQHandler
+                0x0800041c                TIM1_BRK_TIM15_IRQHandler
+ *(.init)
+ *(.fini)
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+ *(.rodata*)
+ *(.eh_fram e*)
+
+.glue_7         0x08000420        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0x08000420        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0x08000420        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x08000420        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x08000420        0x0
+ .iplt          0x00000000        0x0 ..\obj\led_blink.o
+
+.rel.dyn        0x08000420        0x0
+ .rel.iplt      0x00000000        0x0 ..\obj\led_blink.o
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x08000420                __exidx_start = .
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x08000420                __exidx_end = .
+                0x08000420                __etext = .
+                0x08000420                _sidata = __etext
+
+.data           0x20000000        0x0 load address 0x08000420
+                0x20000000                __data_start__ = .
+                0x20000000                _sdata = __data_start__
+ *(vtable)
+ *(.data*)
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                0x20000000                PROVIDE (__preinit_array_end, .)
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array)
+                0x20000000                PROVIDE (__init_array_end, .)
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array.*))
+ *(.fini_array)
+                0x20000000                PROVIDE (__fini_array_end, .)
+ *(.jcr*)
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                __data_end__ = .
+                0x20000000                _edata = __data_end__
+
+.igot.plt       0x20000000        0x0
+ .igot.plt      0x00000000        0x0 ..\obj\led_blink.o
+
+.bss            0x20000000        0x0
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                __bss_start__ = .
+                0x20000000                _sbss = __bss_start__
+ *(.bss*)
+ *(COMMON)
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                __bss_end__ = .
+                0x20000000                _ebss = __bss_end__
+
+.heap           0x20000000        0x0
+                0x20000000                __end__ = .
+                0x20000000                _end = __end__
+                0x20000000                end = __end__
+ *(.heap*)
+                0x20000000                __HeapLimit = .
+
+.co_stack       0x20000000        0x0
+                0x20000000                . = ALIGN (0x8)
+ *(.co_stack .co_stack.*)
+                0x2000a000                __StackTop = (ORIGIN (ram) + 0xa000)
+                0x2000a000                __StackLimit = (__StackTop - SIZEOF (.co_stack))
+                0x2000a000                PROVIDE (__stack, __StackTop)
+                0x00000001                ASSERT ((__StackLimit >= __HeapLimit), region ram  overflowed with stack)
+LOAD ..\obj\led_blink.o
+LOAD ..\obj\delay.o
+LOAD ..\obj\main.o
+LOAD ..\obj\uart_1.o
+LOAD ..\obj\system_stm32f30x_temp.o
+LOAD ..\obj\startup_stm32f30x.o
+START GROUP
+LOAD c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/armv7e-m\libgcc.a
+LOAD c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv7e-m\libg.a
+LOAD c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv7e-m\libc.a
+END GROUP
+OUTPUT(NIXIE_alarm.elf elf32-littlearm)
+
+.debug_info     0x00000000      0xc94
+ .debug_info    0x00000000      0x327 ..\obj\led_blink.o
+ .debug_info    0x00000327       0xc5 ..\obj\main.o
+ .debug_info    0x000003ec      0x36b ..\obj\uart_1.o
+ .debug_info    0x00000757      0x47e ..\obj\system_stm32f30x_temp.o
+ .debug_info    0x00000bd5       0xbf ..\obj\startup_stm32f30x.o
+
+.debug_abbrev   0x00000000      0x356
+ .debug_abbrev  0x00000000       0xaf ..\obj\led_blink.o
+ .debug_abbrev  0x000000af       0x85 ..\obj\main.o
+ .debug_abbrev  0x00000134       0xd8 ..\obj\uart_1.o
+ .debug_abbrev  0x0000020c      0x138 ..\obj\system_stm32f30x_temp.o
+ .debug_abbrev  0x00000344       0x12 ..\obj\startup_stm32f30x.o
+
+.debug_aranges  0x00000000      0x120
+ .debug_aranges
+                0x00000000       0x80 ..\obj\led_blink.o
+ .debug_aranges
+                0x00000080       0x20 ..\obj\main.o
+ .debug_aranges
+                0x000000a0       0x28 ..\obj\uart_1.o
+ .debug_aranges
+                0x000000c8       0x30 ..\obj\system_stm32f30x_temp.o
+ .debug_aranges
+                0x000000f8       0x28 ..\obj\startup_stm32f30x.o
+
+.debug_ranges   0x00000000       0xd8
+ .debug_ranges  0x00000000       0x70 ..\obj\led_blink.o
+ .debug_ranges  0x00000070       0x10 ..\obj\main.o
+ .debug_ranges  0x00000080       0x18 ..\obj\uart_1.o
+ .debug_ranges  0x00000098       0x20 ..\obj\system_stm32f30x_temp.o
+ .debug_ranges  0x000000b8       0x20 ..\obj\startup_stm32f30x.o
+
+.debug_line     0x00000000      0x762
+ .debug_line    0x00000000      0x233 ..\obj\led_blink.o
+ .debug_line    0x00000233      0x14c ..\obj\main.o
+ .debug_line    0x0000037f      0x179 ..\obj\uart_1.o
+ .debug_line    0x000004f8      0x1b9 ..\obj\system_stm32f30x_temp.o
+ .debug_line    0x000006b1       0xb1 ..\obj\startup_stm32f30x.o
+
+.debug_str      0x00000000      0x493
+ .debug_str     0x00000000      0x277 ..\obj\led_blink.o
+                                0x2b3 (size before relaxing)
+ .debug_str     0x00000277       0x46 ..\obj\main.o
+                                0x16c (size before relaxing)
+ .debug_str     0x000002bd       0x77 ..\obj\uart_1.o
+                                0x264 (size before relaxing)
+ .debug_str     0x00000334      0x15f ..\obj\system_stm32f30x_temp.o
+                                0x2f1 (size before relaxing)
+
+.comment        0x00000000       0x70
+ .comment       0x00000000       0x70 ..\obj\led_blink.o
+                                 0x71 (size before relaxing)
+ .comment       0x00000000       0x71 ..\obj\main.o
+ .comment       0x00000000       0x71 ..\obj\uart_1.o
+ .comment       0x00000000       0x71 ..\obj\system_stm32f30x_temp.o
+
+.ARM.attributes
+                0x00000000       0x31
+ .ARM.attributes
+                0x00000000       0x33 ..\obj\led_blink.o
+ .ARM.attributes
+                0x00000033       0x33 ..\obj\main.o
+ .ARM.attributes
+                0x00000066       0x33 ..\obj\uart_1.o
+ .ARM.attributes
+                0x00000099       0x33 ..\obj\system_stm32f30x_temp.o
+ .ARM.attributes
+                0x000000cc       0x21 ..\obj\startup_stm32f30x.o
+
+.debug_frame    0x00000000      0x18c
+ .debug_frame   0x00000000       0xe8 ..\obj\led_blink.o
+ .debug_frame   0x000000e8       0x28 ..\obj\main.o
+ .debug_frame   0x00000110       0x30 ..\obj\uart_1.o
+ .debug_frame   0x00000140       0x4c ..\obj\system_stm32f30x_temp.o
+
+.debug_loc      0x00000000      0x10e
+ .debug_loc     0x00000000      0x10e ..\obj\system_stm32f30x_temp.o

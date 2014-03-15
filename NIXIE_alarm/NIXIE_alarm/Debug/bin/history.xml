@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=NIXIE_alarm.map -O2 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\NIXIE_alarm -TC:\CooCox\CoIDE\configuration\ProgramData\NIXIE_alarm/arm-gcc-link.ld -g">
+      <target file="NIXIE_alarm.elf" lastModified="144c5e22eaf">
+         <source file="..\obj\led_blink.o" lastModified="144c5e22b4a"/>
+         <source file="..\obj\delay.o" lastModified="144c5e22bae"/>
+         <source file="..\obj\main.o" lastModified="144c5e22bf5"/>
+         <source file="..\obj\uart_1.o" lastModified="144c5e22c48"/>
+         <source file="..\obj\system_stm32f30x_temp.o" lastModified="144c5e22cb2"/>
+         <source file="..\obj\startup_stm32f30x.o" lastModified="144c5e22ccf"/>
+      </target>
+   </processor>
+</history>
